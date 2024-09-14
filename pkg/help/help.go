@@ -55,7 +55,7 @@ func generateLongDesc(lang string) string {
     num := 1
     for _, example := range HelpData[lang].Examples {
         
-        examples += fmt.Sprintf("%d. %s \n\t %s \n",num, example.Description, example.Command)
+        examples += fmt.Sprintf("%d.%s \n    %s\n",num, example.Description, example.Command)
         num++
     }
     return fmt.Sprintf("%s\n\nExamples:\n%s", HelpData[lang].ShortDesc,examples)
