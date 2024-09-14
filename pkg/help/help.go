@@ -22,8 +22,8 @@ var HelpData = map[string]*Help{
         Usage:     "Usage: j2y [-f inputFile | -i jsonData] [output]",
         ShortDesc: "j2y (json to yaml) is a tool for converting JSON data (from files or direct input) to YAML format.",
         Examples: []Example{
-            {"Convert from file:", "j2y -f input.json output.yaml"},
-            {"Convert from command line JSON data:", "j2y -i '{\"key\": \"value\"}' output.yaml"},
+            {"Convert from file:", "j2y -f input.json -o output.yaml"},
+            {"Convert from command line JSON data:", "j2y -i '{\"key\": \"value\"}' -o output.yaml"},
             {"Convert from standard input:", "echo '{\"foo\":1}' | j2y"},
             {"Specify input file only, output to stdout:", "j2y -f input.json"},
             {"Specify JSON data only, output to stdout:", "j2y -i '{\"key\": \"value\"}'"},
@@ -33,8 +33,8 @@ var HelpData = map[string]*Help{
         Usage:     "用法: j2y [-f 输入文件 | -i JSON 数据] [输出]",
         ShortDesc: "j2y（json to yaml）是一个工具，用于将 JSON 数据（从文件或直接输入）转换为 YAML 格式。",
         Examples: []Example{
-            {"从文件转换:", "j2y -f input.json output.yaml"},
-            {"从命令行输入 JSON 数据:", "j2y -i '{\"key\": \"value\"}' output.yaml"},
+            {"从文件转换:", "j2y -f input.json -o output.yaml"},
+            {"从命令行输入 JSON 数据:", "j2y -i '{\"key\": \"value\"}' -o output.yaml"},
             {"从标准输入转换:", "echo '{\"foo\":1}' | j2y"},
             {"只指定输入文件，输出到标准输出:", "j2y -f input.json"},
             {"只指定 JSON 数据，输出到标准输出:", "j2y -i '{\"key\": \"value\"}'"},
