@@ -13,9 +13,9 @@ j2y (json to yaml) is a tool for converting JSON data (from files or direct inpu
 Examples:
 [
  1. Convert from file: 
-         j2y -f input.json output.yaml 
+         j2y -f input.json -o output.yaml 
  2. Convert from command line JSON data: 
-         j2y -i '{"key": "value"}' output.yaml 
+         j2y -i '{"key": "value"}' -o output.yaml 
  3. Convert from standard input: 
          echo '{"foo":1}' | j2y 
  4. Specify input file only, output to stdout: 
