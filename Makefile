@@ -3,7 +3,7 @@ all: build
 build: clean
 	go build -o bin/j2y cmd/main.go	
 clean: 
-	@rm bin/*
+	@rm -rf bin/*
 install: build
 	@echo "install /usr/bin/"
 	cp bin/j2y /usr/bin/
