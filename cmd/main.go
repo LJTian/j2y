@@ -11,6 +11,10 @@ import (
     "github.com/ljtian/j2y/pkg/help"
 )
 
+var inputFile string
+var jsonData string
+var outputFile string
+
 func main() {
 
     // Get language setting from environment variable
@@ -21,10 +25,6 @@ func main() {
     if _, exists := help.HelpData[helpLang]; !exists {
         helpLang = "en" // Default language
     }
-
-    var inputFile string
-    var jsonData string
-    var outputFile string
 
     var rootCmd = &cobra.Command{
         Use:   help.HelpData[helpLang].Usage,
@@ -111,11 +111,6 @@ func run(inputFile, jsonData string, args []string) {
     if err != nil {
         fmt.Printf("Failed to convert to YAML: %v\n", err)
         return
-    }
-
-    outputFile := ""
-    if len(args) > 0 {
-        outputFile = args[0]
     }
 
     if outputFile == "" {
