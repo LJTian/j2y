@@ -51,12 +51,11 @@ func init() {
 
 // Generate LongDesc with formatted examples
 func generateLongDesc(lang string) string {
-    var examples []string
+    var examples string
     num := 1
-    examples = append(examples,"\n");
     for _, example := range HelpData[lang].Examples {
         
-        examples = append(examples, fmt.Sprintf("%d. %s \n\t %s \n",num, example.Description, example.Command))
+        examples += fmt.Sprintf("%d. %s \n\t %s \n",num, example.Description, example.Command)
         num++
     }
     return fmt.Sprintf("%s\n\nExamples:\n%s", HelpData[lang].ShortDesc,examples)
