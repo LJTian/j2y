@@ -1,0 +1,58 @@
+{
+    "help": {
+        "en": {
+            "usage": "j2y [-f inputFile | -i jsonData] [outputFile]",
+            "short_description": "Convert JSON data to YAML format",
+            "long_description": "j2y is a tool for converting JSON data (from files or direct input) to YAML format.",
+            "examples": [
+                {
+                    "description": "Convert from file",
+                    "command": "j2y -f data.json output.yaml"
+                },
+                {
+                    "description": "Convert from command line JSON data",
+                    "command": "j2y -i '{\"key\": \"value\"}' output.yaml"
+                },
+                {
+                    "description": "Convert from standard input",
+                    "command": "echo '{\"foo\":1}' | j2y"
+                },
+                {
+                    "description": "Specify input file, output to standard output",
+                    "command": "j2y -f data.json"
+                },
+                {
+                    "description": "Specify JSON data, output to standard output",
+                    "command": "j2y -i '{\"key\": \"value\"}'"
+                }
+            ]
+        },
+        "zh": {
+            "usage": "j2y [-f inputFile | -i jsonData] [outputFile]",
+            "short_description": "将 JSON 数据转换为 YAML 格式",
+            "long_description": "j2y 是一个工具，用于将 JSON 数据（从文件或直接输入）转换为 YAML 格式。",
+            "examples": [
+                {
+                    "description": "从文件转换",
+                    "command": "j2y -f data.json output.yaml"
+                },
+                {
+                    "description": "从命令行输入 JSON 数据",
+                    "command": "j2y -i '{\"key\": \"value\"}' output.yaml"
+                },
+                {
+                    "description": "从标准输入转换",
+                    "command": "echo '{\"foo\":1}' | j2y"
+                },
+                {
+                    "description": "只指定输入文件，输出到标准输出",
+                    "command": "j2y -f data.json"
+                },
+                {
+                    "description": "只指定 JSON 数据，输出到标准输出",
+                    "command": "j2y -i '{\"key\": \"value\"}'"
+                }
+            ]
+        }
+    }
+}
