@@ -1,11 +1,12 @@
-# Info
+# j2y (JSON to YAML)
 <p align="center">
   <img src="https://img.shields.io/github/v/release/LJTian/j2y?style=flat-square" alt="Release">
   <img src="https://img.shields.io/github/license/LJTian/j2y?style=flat-square" alt="License">
   <img src="https://img.shields.io/github/actions/workflow/status/LJTian/j2y/goreleaser.yml?style=flat-square" alt="Build Status">
 </p>
-json to yaml tool.
+**j2y** is a lightweight, zero-dependency command-line tool that converts **JSON** to **YAML**. 
 
+It is designed to be pipe-friendly, making it a perfect companion for `kubectl`, `docker`, and other DevOps tools.
 # Install
 ## Option 1: One-line Installer (Recommended)
 Install the latest version directly from your terminal:
