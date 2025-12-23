@@ -1,8 +1,22 @@
 # Info
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/LJTian/j2y?style=flat-square" alt="Release">
+  <img src="https://img.shields.io/github/license/LJTian/j2y?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/actions/workflow/status/LJTian/j2y/goreleaser.yml?style=flat-square" alt="Build Status">
+</p>
 json to yaml tool.
 
 # Install
+## Option 1: One-line Installer (Recommended)
+Install the latest version directly from your terminal:
+
+```bash
+curl -sfL [https://raw.githubusercontent.com/LJTian/j2y/main/install.sh](https://raw.githubusercontent.com/LJTian/j2y/main/install.sh) | bash
+
+
 ```shell
+git clone https://github.com/LJTian/j2y.git
+cd j2y
 make install
 ```
 
