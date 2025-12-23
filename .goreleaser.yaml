@@ -9,6 +9,11 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
+    # 👇👇👇 加上这一行，指向你的 main.go 所在的文件夹
+    main: ./cmd/j2y
+    
+    # 建议加上这个，指定编译出来的二进制文件名叫 j2y (如果不加，默认是文件夹名)
+    binary: j2y
     goos:
       - linux
       - windows
