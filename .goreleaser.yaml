@@ -41,6 +41,28 @@ checksum:
 snapshot:
   version_template: "{{ incpatch .Version }}-next"
 
+brews:
+  -
+    # 👇 修改这里：指向你自己
+    repository:
+      owner: LJTian
+      name: j2y  # <--- 以前是 homebrew-tap，现在改成 j2y
+      
+      # 👇 如果是同一个仓库，用 GITHUB_TOKEN 就可以，不需要 GH_PAT
+      token: "{{ .Env.GITHUB_TOKEN }}"
+
+    name: j2y
+    homepage: "https://github.com/LJTian/j2y"
+    description: "A fast JSON to YAML converter."
+    license: "MIT"
+    
+    # 👇 生成的文件会放在你仓库根目录的 Formula 文件夹下
+    directory: Formula 
+    
+    # 重要：不要每次发布都强制 push 到 default branch，
+    # 但 GoReleaser 默认行为就是 commit 到这个仓库。
+    # 确保你的 GitHub Actions 有权限写这个仓库。
+
 changelog:
   sort: asc
   filters:
