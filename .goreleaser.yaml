@@ -1,0 +1,44 @@
+# .goreleaser.yaml
+version: 2
+
+before:
+  hooks:
+    # 编译前清理一下，并下载依赖
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin # macos
+    goarch:
+      - amd64
+      - arm64 # 支持 M1/M2/M3 芯片
+
+archives:
+  - format: tar.gz
+    # 这会把所有文件打包成 j2y_1.0.0_linux_amd64.tar.gz 这种格式
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- .Arch }}
+    # 如果你有 README.md 或 LICENSE，这里会自动打包进去
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

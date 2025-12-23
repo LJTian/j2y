@@ -1,0 +1,36 @@
+# .github/workflows/release.yml
+name: goreleaser
+
+on:
+  push:
+    # 只有推送 v 开头的 tag 时才触发，比如 v0.0.1
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write # 必须给写权限，否则无法创建 Release
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 必须设为 0，GoReleaser 需要读取 git 历史来生成变更日志
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v6
+        with:
+          # 检查配置文件是否正确，建议第一次发布时设为 false，稳定后可以删掉这行
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          # GitHub 自动生成的 Token，不需要你自己去申请
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
