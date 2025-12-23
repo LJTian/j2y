@@ -4,7 +4,8 @@
   <img src="https://img.shields.io/github/license/LJTian/j2y?style=flat-square" alt="License">
   <img src="https://img.shields.io/github/actions/workflow/status/LJTian/j2y/goreleaser.yml?style=flat-square" alt="Build Status">
 </p>
-**j2y** is a lightweight, zero-dependency command-line tool that converts **JSON** to **YAML**. 
+
+***j2y*** is a lightweight, zero-dependency command-line tool that converts ***JSON*** to ***YAML***. 
 
 It is designed to be pipe-friendly, making it a perfect companion for `kubectl`, `docker`, and other DevOps tools.
 # Install
@@ -12,9 +13,12 @@ It is designed to be pipe-friendly, making it a perfect companion for `kubectl`,
 Install the latest version directly from your terminal:
 
 ```bash
-curl -sfL [https://raw.githubusercontent.com/LJTian/j2y/main/install.sh](https://raw.githubusercontent.com/LJTian/j2y/main/install.sh) | bash
-
-
+curl -sfL https://raw.githubusercontent.com/LJTian/j2y/main/install.sh | bash
+```
+ 
+## Option 2: Source Installer
+Build and install from source code:
+Install the latest version directly from your terminal:
 ```shell
 git clone https://github.com/LJTian/j2y.git
 cd j2y
